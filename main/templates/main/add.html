@@ -1,0 +1,22 @@
+{% extends 'main/template.html' %}
+
+{% block content %}
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class=""> 
+                <p>
+                {{data|linebreaks}}
+                <p>
+                <form  method="POST" action="add">
+                    {% csrf_token %}
+                    {{add_map_form}}
+                    <button class="btn btn-success" type="submit">ADD MAP</button>
+                </form>
+            </div>
+
+        </div>
+       
+    </div>
+
+{% endblock content %}

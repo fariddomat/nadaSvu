@@ -1,0 +1,44 @@
+{% extends 'main/template.html' %}
+
+{% block content %}
+    
+    <div class="col-lg-12 text-black">
+        <h3>You can left goal city empty to search for { Bucharest }</h3>
+        <div class="bg-success">
+            {{data|linebreaks}}
+        </div>
+        <div class="col-lg-6">
+            <form method="POST" action="/">
+                <div class="form-row">
+                {% csrf_token %}
+                {{search_form}} 
+                </div>
+                <button class="btn btn-success" type="submit">SEARCH</button>
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <h1 class="text-dark">Straight-line distance to Bucharest</h1>
+            <p>Arad 366<br>
+                Bucharest 0<br>
+                Craiova 160<br>
+                Dobreta 242<br>
+                Eforie 161<br>
+                Fagaras 178<br>
+                Giurgiu 77<br>
+                Hirsova 151<br>
+                Iasi 226<br>
+                Lugoj 244<br>
+                Mehadia 241<br>
+                Neamt 234<br>
+                Oradea 380<br>
+                Pitesti 98<br>
+                Rimnicu_Vilcea 193<br>
+                Sibiu 253<br>
+                Timisoara 329<br>
+                Urziceni 80<br>
+                Vaslui 199<br>
+                Zerind 374</p>
+        </div>
+    </div>
+
+{% endblock content %}
